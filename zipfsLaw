@@ -1,0 +1,43 @@
+import matplotlib.pyplot as plt
+from collections import Counter
+import re
+
+def read_file(file_path):
+    with open(file_path, 'r', encoding='utf-8') as file:
+        return file.read()
+
+#preprocess and count frequencies
+def count_word_frequencies(text):
+    #convert to lower and use regex expression
+    words = re.findall(r'\b\w+\b', text.lower())
+    print(words)
+    return Counter(words)
+
+#Zipf's law function
+def plot_zipf(word_counts):
+    #sort by frequency, get ranks
+    sorted_counts = word_counts.most_common()
+    ranks = range(1, len(sorted_counts) + 1)
+    frequencies = [count for word, count in sorted_counts]
+    
+    #create plots
+    plt.figure(figsize=(10, 6))
+    plt.loglog(ranks, frequencies, marker='o')
+    plt.title("Zipf's Law results")
+    plt.xlabel("Word Rank")
+    plt.ylabel("Word Frequency")
+    plt.grid(True)
+    
+    #for i, (word, count) in enumerate(sorted_counts[:10]):
+    top_words = [word for word, _ in sorted_counts[:30]]
+    top_ranks = list(range(1, len(top_words) + 1))
+    plt.xticks(top_ranks, top_words, rotation=45, ha='right')
+        #plt.annotate(word, (ranks[i], frequencies[i]), textcoords=xlabel, xytext=(0,10), ha='center')
+        
+    plt.show()
+    
+if __name__ == "__main__":
+    file_path = 'sample.txt'
+    text = read_file(file_path)
+    word_counts = count_word_frequencies(text)
+    plot_zipf(word_counts)
