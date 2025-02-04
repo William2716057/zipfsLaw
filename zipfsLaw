@@ -28,12 +28,12 @@ def plot_zipf(word_counts):
     plt.ylabel("Word Frequency")
     plt.grid(True)
     
-    #for i, (word, count) in enumerate(sorted_counts[:10]):
     top_words = [word for word, _ in sorted_counts[:30]]
     top_ranks = list(range(1, len(top_words) + 1))
-    plt.xticks(top_ranks, top_words, rotation=45, ha='right')
-        #plt.annotate(word, (ranks[i], frequencies[i]), textcoords=xlabel, xytext=(0,10), ha='center')
-        
+    
+    step_size = max(1, len(top_ranks) // 10)  # adjust according to preference or needs
+    plt.xticks(top_ranks[::step_size], top_words[::step_size], rotation=45, ha='right')
+          
     plt.show()
     
 if __name__ == "__main__":
