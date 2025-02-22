@@ -27,3 +27,8 @@ git clone https://github.com/William2716057/zipfsLaw.git
 ```
 python3 zipflaw.py
 ```
+### Script Explanation:
+- read_file(file_path): Reads and returns the content of a specified text file.
+- count_word_frequencies(text): Processes the text to count how many times each word appears and returns a Counter object.
+- plot_zipf(word_counts): Generates and displays a log-log plot of the word frequencies according to Zipf's law.
+
