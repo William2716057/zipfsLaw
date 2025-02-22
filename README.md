@@ -20,7 +20,10 @@ Zipf's law is a rule that states that in many languages the frequency of any wor
 
 1. Clone repository
 ```
-
+git clone https://github.com/William2716057/zipfsLaw.git
 ```
 2. Prepare your input text file (sample.txt or any .txt file) in the project directory.
-3. 
+3. Run script
+```
+python3 zipflaw.py
+```
