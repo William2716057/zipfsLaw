@@ -13,3 +13,14 @@ Zipf's law is a rule that states that in many languages the frequency of any wor
 - matplotlib
 - collections
 - re
+
+![Capture](https://github.com/user-attachments/assets/b7eb71db-fc34-44cd-8239-ba819af508b1)
+
+## Usage
+
+1. Clone repository
+```
+
+```
+2. Prepare your input text file (sample.txt or any .txt file) in the project directory.
+3. 
