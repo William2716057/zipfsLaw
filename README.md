@@ -32,3 +32,7 @@ python3 zipflaw.py
 - count_word_frequencies(text): Processes the text to count how many times each word appears and returns a Counter object.
 - plot_zipf(word_counts): Generates and displays a log-log plot of the word frequencies according to Zipf's law.
 
+### Notes
+- The script converts all text to lowercase and uses regular expressions to extract words.
+- The matplotlib library is used for visualization.
+- The top 30 most frequent words will be labeled on the x-axis of the plot.
